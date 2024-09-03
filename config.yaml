@@ -1,0 +1,49 @@
+AppPath: D:\Wuthering Waves\Wuthering Waves Game\Wuthering Waves.exe
+ConsumablesName: 今州烤串
+DungeonWeeklyBossLevel: 50
+EchoAbsorptionDynamicAdjustingStrategy: false
+EchoDebugMode: true
+EchoLock: true
+EchoMaxContinuousLockQuantity: 5
+EchoSearchModelChange: true
+EchoSynthesisDebugMode: true
+FightTactics:
+- a,e,q,r,s,0.2,a(1)
+- a,r,q~0.1,a(2),e,0.05,a~0.7
+- e,a(2),0.5,a~1,r
+FightTacticsConcerto:
+- a,e,a(2),0.5,a~1,r
+- a,e,a(2),0.5,a~1,r
+- a,e,a(2),0.5,a~1,r
+FightTacticsUlt:
+- q,0.05,e,0.1,s,a(0.3)
+- a(2),e,a(2),e,a(2),e,0.05,a~0.7
+- a(2),e,a(2),q~0.1
+GameMonitorTime: 5
+GameResolution:
+- 1280
+- 720
+GameRunningTimeForRestart: 0
+LogFilePath: ''
+MaxEchoAbsorptionTime: 15
+MaxFightTime: 120
+MaxIdleTime: 15
+OcrInterval: 0
+ReloadPagesAndConditional: false
+SearchDreamlessEchoes: true
+SearchEchoes: true
+SelectRoleInterval: 2
+ShortcutAllStop: f12
+ShortcutBossTaskStart: f5
+ShortcutLockEchoes: f8
+ShortcutMaskWindowDisplayStatusChange: f9
+ShortcutSynthesisEchoes: f6
+ShortcutTaskStop: f7
+TargetBoss:
+- 无妄者
+UseConsumables: false
+UseDreamlessSpecialCode: false
+UseGPU: true
+UseJueSpecialCode: false
+UseSpecialCode: false
+WaitUltAnimation: true

@@ -1,0 +1,11 @@
+SpecialCode: # 分Boss的进图前特殊代码，需要代码准确，否则会报错，此部分代码动态加载，调整后不需要重启脚本
+  SpecialCodeBossName:
+    无妄者: |  # 维里奈进图代码，实现放E之后重击进图以提高进图时维里奈的协奏能量条，不用可注释从无妄者开始的整段代码,亦可自行修改成符合自己的代码
+      for _ in range(3):  # 循环3次for里面的代码
+        control.tap("1")   # 按1（切换到1号角色，此处为维里奈）
+        time.sleep(0.1)   # 等待0.1秒
+      control.tap("e")   # 按E
+      time.sleep(0.1)  # 等待0.1秒
+      control.mouse_press()  # 按鼠标左键
+      time.sleep(1)  # 等待1秒
+      control.mouse_release()  # 松开鼠标左键

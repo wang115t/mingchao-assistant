@@ -1,0 +1,89 @@
+# 系统设定
+AppPath: # Wuthering Waves.exe的路径，如需设置，使用"\\"而不是"\" ,留空为从注册表读取游戏运行目录，无法读取注册表，且此值为空时无法在崩溃时自动重启游戏。
+GiteeAccessToken: "" # Gitee自己的令牌，出现网络问题无法更新等错误时可尝试填写，防止更新限速或者限制频率。
+UpdateType: Git  # 自动更新方式，"Download"或者"Git"，Download:从Github下载项目包到本地，需要手动解压覆盖，git为从Gitee直接拉取覆盖，需要安装git依赖。
+ReloadPagesAndConditional: False # 是否动态加载页面和条件，低配设备或CPU识别可尝试使用，出现吸收声骸发呆或者一直向前走也可打开此功能观察是否改善
+OcrInterval: 0 # OCR识别间隔时间
+GameMonitorTime: 5 # 游戏窗口检测间隔时间
+LogFilePath: # 日志保存路径，留空即为项目根目录，如需设置，则需为"c:\\mc_log.txt"格式，使用"\\"而不是"\"
+GameRunningTimeForRestart: 0 # 游戏重启时间，脚本启动后运行超过此时间将重启游戏，防止加载时间过长，0为不重启
+GameResolution: [1280, 720] # 游戏启动或重启时的分辨率，例如:"[1280, 720]"，需要中括号[]，且使用","而不是"，"，留空为[]，此时不使用游戏启动参数。
+GuiResolution: [2373,1328] #GUI分辨率
+UseGPU: False # 是否使用GPU加速，仅Windows系统有效
+# 快捷键设定
+ShortcutBossTaskStart: "f5" # 快捷键修改：启动刷Boss脚本，默认F5
+ShortcutSynthesisEchoes: "f6" # 快捷键修改：启动声骸合成脚本，默认F6
+ShortcutTaskStop: "f7" # 快捷键修改：停止当前任务，默认F7
+ShortcutLockEchoes: "f8" # 快捷键修改：启动声骸背包锁定脚本，默认F8
+ShortcutMaskWindowDisplayStatusChange: "f9" # 快捷键修改：显示/隐藏遮盖窗口，默认F9
+ShortcutAllStop: "f12" # 快捷键修改：完全停止程序，默认F12
+
+# 覆盖显示框设定
+MaskWindowViewerDiaphanous: 70 # 覆盖显示窗口透明度，0-100，值越小越透明，留空为不使用透明度。
+MaskWindowViewerSize: "1000x1000" # 覆盖显示窗口分辨率大小，默认为"800x600"，请按格式填写
+MaskWindowViewerTextColor: "#FFB7C5" # 覆盖显示窗口文字颜色，默认为白色"#FFFFFF"，请按格式填写
+MaskWindowViewerTextSize: 12 # 覆盖显示窗口文字大小，默认为12，请按格式填写
+
+# 刷Boss脚本设定
+EchoAbsorptionDynamicAdjustingStrategy: False # 声骸吸收时间动态调整策略
+MaxFightTime: 120 # 单次战斗最大时间 超过时间会进行下一个目标
+MaxIdleTime: 15 # 战斗完成后的空闲时间，不能小于5
+MaxEchoAbsorptionTime: 15 # 最大吸收声骸时间，此数值必须小于上面的等待时间
+EchoSearchModelChange: False # 是否自动根据BOSS切换使用的搜索声骸模型
+DungeonWeeklyBossLevel: 70 # 自己可以掉落的周本(副本)boss最低等级（当前索拉等级*10）
+SearchEchoes: True # 是否搜索声骸
+SearchDreamlessEchoes: True # 是否搜索无妄者声骸
+UseConsumables: False # 是否使用料理或药水（下面名称也需要填写）
+ConsumablesName: "今州烤串" # 使用的料理或药水名称，留空则不使用
+WaitUltAnimation: True # 是否判断并等待大招动画
+# CharacterHeal: true #是否判断角色是否阵亡 若阵亡则返回神像复活  1.1.3版本不再使用此设置
+
+# 声骸锁定/合成脚本设定
+EchoLock: False #是否使用启用声骸锁定功能
+EchoMaxContinuousLockQuantity: 5 # 最大连续检测到已锁定声骸的数量，超过此数量就停止
+EchoDebugMode: True #声骸锁定功能DEBUG显示输出的开关
+EchoSynthesisDebugMode: True # 声骸合成锁定功能DEBUG显示输出的开关
+
+FightTactics: # 战斗策略 三个角色的释放技能顺序, 逗号分隔, e,q,r为技能, a为普攻(默认连点0.3秒), 数字为间隔时间,a~0.5为普攻按下0.5秒,a(0.5)为连续普攻0.5秒，摩托车短按请用q~0.1
+    - "a,r,q,a(2),f,e,a(1),e,a(1),e,a(1),0.05,f,a~0.8"   # 卡卡罗
+    - "a,r,q~0.1,a(2),f,e,0.05,a~0.7"   #安可
+    - "a,f,e,f,q,f,r,f,s,0.2,a(1)"      #维里奈
+    # - "q,a(0.8),e,0.2,a~0.7,s,0.15,a(1.5),r,0.2,e,f"   #  吟霖
+    # - "q,0.05,r,e,0.15,s,a(0.4)"   # 维里奈
+    # - "a(0.6),q,e,0.6,a(2.6),e,0.6,a(3.0),e,a(0.6),r(0.6)"    # 今汐
+    #  - "a,r,q~0.1,a(2),e,0.05,a~0.7"     # 安可
+FightTacticsUlt: # 大招释放成功时的技能释放顺序，此处只允许有二段r的角色放r，否则可能会有少许延迟
+    - "a(1.6),e,a(1.6),a(1.6),a(1.6),f"   # 卡卡罗
+    - "a(2),e,a(2),e,a(2),e,0.05,a~0.7,f"   #安可
+    - "a(0.3),s,0.2,a(1)"   #维里奈
+    # - "e,a(0.8),a,a~0.7,f"   # 吟霖
+    # - "q,0.05,e,0.15,s,a(0.3)"   # 维里奈
+    # - "a(0.6)"   # 今汐
+    # - "a(2),e,a(2),e,a(2),e,0.05,a~0.7"   # 安可
+FightTacticsConcerto: # 变奏入场时的技能释放顺序。如没有填写，则在短暂延迟(0.6S)后调用平时的战斗策略
+    # - "q,e,0.6,a(2.6),e,a(0.6),r(0.6)"    # 今汐
+    - ""
+    - ""
+    - ""
+TargetBoss: # 目标BOSS 必须保证目标BOSS的位置是有借位信标的，可以少字但是不能有错别字
+    - "鸣钟之龟"
+    - "燎照之骑"
+    - "聚械机偶"
+    - "无妄者"
+UseSpecialCode: True # 是否使用特殊代码
+SpecialCode:  # 分Boss的进图前特殊代码，需要代码准确，否则会报错，此部分代码动态加载，调整后不需要重启脚本
+  SpecialCodeBossName:
+    无妄者: |  # 维里奈进图代码，实现放E之后重击进图以提高进图时维里奈的协奏能量条，不用可注释从无妄者开始的整段代码,亦可自行修改成符合自己的代码
+      for _ in range(3):  # 循环3次for里面的代码
+        control.tap("1")   # 按1（切换到1号角色，此处为维里奈）
+        time.sleep(0.1)   # 等待0.1秒
+      control.tap("e")   # 按E
+      time.sleep(0.1)  # 等待0.1秒
+      control.mouse_press()  # 按鼠标左键
+      time.sleep(1)  # 等待1秒
+      control.mouse_release()  # 松开鼠标左键
+    角: |  # 不转身直接后跳进图代码
+      time.sleep(0.3)  # 等待0.3秒
+      control.key_press(win32con.VK_LSHIFT)  # 按下左Shift键
+      time.sleep(0.5)  # 等待0.5秒
+      control.key_release(win32con.VK_LSHIFT)  # 松开左Shift键
